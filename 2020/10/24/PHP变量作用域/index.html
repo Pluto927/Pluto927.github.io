@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、local（本地的）——局部变量的作用域 在PHP函数内部声明的变量时局部变量，仅能在函数内部访问： 12345678910&lt;?phpfunction test()&amp;#123;  $a&#x3D;15;  echo&quot;内部输出结果:&quot;.$a;&amp;#125;echo&quot;外部输出结果:&quot;.$a;&#x2F;&#x2F;无法访问变量aecho PHP_EOL;test();?&gt;  输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/10/24/PHP%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、local（本地的）——局部变量的作用域 在PHP函数内部声明的变量时局部变量，仅能在函数内部访问： 12345678910&lt;?phpfunction test()&amp;#123;  $a&#x3D;15;  echo&quot;内部输出结果:&quot;.$a;&amp;#125;echo&quot;外部输出结果:&quot;.$a;&#x2F;&#x2F;无法访问变量aecho PHP_EOL;test();?&gt;  输">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-24T07:51:45.219Z">
+<meta property="article:modified_time" content="2020-10-24T07:51:24.094Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-PHP变量作用域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/24/PHP%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="article-date">
+  <time datetime="2020-10-24T07:51:45.219Z" itemprop="datePublished">2020-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、local（本地的）——局部变量的作用域</p>
+<p>在PHP函数内部声明的变量时局部变量，仅能在函数内部访问：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">function test()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  $a=15;</span></span><br><span class="line"><span class="xml">  echo&quot;内部输出结果:&quot;.$a;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">echo&quot;外部输出结果:&quot;.$a;//无法访问变量a</span></span><br><span class="line"><span class="xml">echo PHP_EOL;</span></span><br><span class="line"><span class="xml">test();</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">外部输出结果：</span><br><span class="line">内部输出结果：15</span><br></pre></td></tr></table></figure>
+
+<p>2、global（总体的）——全局变量的作用域</p>
+<p>当需要在函数内调用函数外定义的全局变量时，要在函数中的变量前加上global关键字：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$x=7;</span></span><br><span class="line"><span class="xml">$y=4;</span></span><br><span class="line"><span class="xml">function mytest()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  global $x,$y;</span></span><br><span class="line"><span class="xml">  $y=$x+$y;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">mytest()</span></span><br><span class="line"><span class="xml">echo $y;//输出15</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：15</p>
+<p>PHP将所有全局变量储存在一个名为$GLOBALS[index]的数组中，其中index是用来保存变量的名称，这个数组可以在函数内部访问，也可以直接用来更新全局变量，所以上面的也可以写成这样：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$x=7;</span></span><br><span class="line"><span class="xml">$y=4;</span></span><br><span class="line"><span class="xml">function myTest()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  $GLOBALS[&#x27;y&#x27;]=$GLOBALS[&#x27;x&#x27;]+$GLOBALS[&#x27;y&#x27;];</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">myTest();</span></span><br><span class="line"><span class="xml">echo $y;</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>3、Static（静态的）作用域</p>
+<p>当一个函数完成时，它的所有变量一般情况下都会被删除，当你希望某个局部变量不要被删除时，只需要在第一次声明变量时使用static关键字便可做到保留局部变量：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">funcyion myTest()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  static $x=0;</span></span><br><span class="line"><span class="xml">  echo $x;</span></span><br><span class="line"><span class="xml">  $x++;</span></span><br><span class="line"><span class="xml">  echo PHP_EOL;//换行符</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">myTest();</span></span><br><span class="line"><span class="xml">myTest();</span></span><br><span class="line"><span class="xml">myTest();</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：0 1 2 3</p>
+<p>每次调用函数时，该变量会保留这函数前一次被调用时的值。</p>
+<p>注：该变量仍然是函数的局部变量。</p>
+<p>4、parameter（参数）——参数作用域</p>
+<p>参数是通过调用代码将值传递给函数的局部变量。</p>
+<p>因为在PHP中函数都有自己单独的作用域，所以局部变量的优先级要大于全局变量（在你不声明这个变量之前），声明之后此变量就变成了局部变量，如果修改值那么全局变量的值也会改变。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$a=10;</span></span><br><span class="line"><span class="xml">$b=5;</span></span><br><span class="line"><span class="xml">function test()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  $a=15;</span></span><br><span class="line"><span class="xml">  $b=5;</span></span><br><span class="line"><span class="xml">  $z=$a-$b;</span></span><br><span class="line"><span class="xml">  echo $z;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">test()</span></span><br><span class="line"></span><br><span class="line"><span class="xml">function test1()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  global $a,$b;</span></span><br><span class="line"><span class="xml">  $a=15;</span></span><br><span class="line"><span class="xml">  $b=5;</span></span><br><span class="line"><span class="xml">  $z=$a-$b;</span></span><br><span class="line"><span class="xml">  echo PHP_EOL;</span></span><br><span class="line"><span class="xml">  echo $z;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">test1()</span></span><br><span class="line"></span><br><span class="line"><span class="xml">function test2()</span></span><br><span class="line"><span class="xml">&#123;</span></span><br><span class="line"><span class="xml">  global $a,$b;</span></span><br><span class="line"><span class="xml">  $z=$a-$b;</span></span><br><span class="line"><span class="xml">  echo PHP_EOL;</span></span><br><span class="line"><span class="xml">  echo $z;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">test2();</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：10 10 10</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/24/PHP%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F/" data-id="cklnxs2uv000374wbg10qb1g0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/01/PHP%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%EF%BC%9Aecho%E5%92%8Cprint%E3%80%82/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/18/PHP/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/28/PHP%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/29/%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/10/php%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

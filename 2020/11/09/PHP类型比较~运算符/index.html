@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP类型比较**”php_EOL”:**换行符 松散比较：用”&#x3D;&#x3D;“，值相等类型不一定相等 严格比较：用”&#x3D;&#x3D;&#x3D;“值与类型都要相等 PHP常量常量有英文字母、下划线和数字组成，但数字不能作为首字母而出现。 使用常量时，不能在常量名面前添加$符号，不然会将常量转换成为定义的变量使用，导致报错。 常量是全局的。 设置php常量使用define()函数：语法格式： 1bool define(strin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="PHP类型比较**”php_EOL”:**换行符 松散比较：用”&#x3D;&#x3D;“，值相等类型不一定相等 严格比较：用”&#x3D;&#x3D;&#x3D;“值与类型都要相等 PHP常量常量有英文字母、下划线和数字组成，但数字不能作为首字母而出现。 使用常量时，不能在常量名面前添加$符号，不然会将常量转换成为定义的变量使用，导致报错。 常量是全局的。 设置php常量使用define()函数：语法格式： 1bool define(strin">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-09T12:34:15.240Z">
+<meta property="article:modified_time" content="2020-11-09T12:33:09.826Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-PHP类型比较~运算符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2020-11-09T12:34:15.240Z" itemprop="datePublished">2020-11-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PHP类型比较"><a href="#PHP类型比较" class="headerlink" title="PHP类型比较"></a>PHP类型比较</h2><p>**”php_EOL”:**换行符</p>
+<p>松散比较：用”==“，值相等类型不一定相等</p>
+<p>严格比较：用”===“值与类型都要相等</p>
+<h2 id="PHP常量"><a href="#PHP常量" class="headerlink" title="PHP常量"></a>PHP常量</h2><p>常量有英文字母、下划线和数字组成，但数字不能作为首字母而出现。</p>
+<p>使用常量时，不能在常量名面前添加$符号，不然会将常量转换成为定义的变量使用，导致报错。</p>
+<p>常量是全局的。</p>
+<h4 id="设置php常量使用define-函数："><a href="#设置php常量使用define-函数：" class="headerlink" title="设置php常量使用define()函数："></a>设置php常量使用define()函数：</h4><p>语法格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define(string $name,mixed $value[,bool %case_insenstive&#x3D;false])</span><br></pre></td></tr></table></figure>
+
+<p>该函数有三个参数：</p>
+<p>（1）name：必选函数，常量名称，即标识符。</p>
+<p>（2）value：必选参数，常量的值。</p>
+<p>（3）case_insenstive：可选参数，如果是设置为TURE,该常量则大小写不敏感。默认是大小写敏感的。</p>
+<h2 id="PHP字符串："><a href="#PHP字符串：" class="headerlink" title="PHP字符串："></a>PHP字符串：</h2><p>当赋一个文本值给变量是，要给文本值加上单引号或双引号。</p>
+<h2 id="PHP并置运算符："><a href="#PHP并置运算符：" class="headerlink" title="PHP并置运算符："></a>PHP并置运算符：</h2><p><strong>(.)：</strong>php中只有这个字符串运算符可以把两个字符串的值链接起来。</p>
+<h2 id="PHP-strlen-函数"><a href="#PHP-strlen-函数" class="headerlink" title="PHP strlen()函数"></a>PHP strlen()函数</h2><p>返回字符串的长度（字节数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo strlen(&quot;Hello world!&quot;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以上代码将输出12</p>
+<p>一个中文占3个字符数，可以使用mb_strlen设置指定编码输出中文字符的个数(注：1、中英文的感叹号、双引号等不同，如：！和！。2、mb_strpos按字处理，strpos按字符处理)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo mb_strlen(&quot;中文字符&quot;,&#39;utf-8&#39;);&#x2F;&#x2F;输出4</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP-strpos-函数"><a href="#PHP-strpos-函数" class="headerlink" title="PHP strpos()函数"></a>PHP strpos()函数</h2><p>查找一个字符或一段指定的文本。若找到匹配，则该函数会返回第一个匹配的字符位置。若没有找到匹配，则返回FALSE。</p>
+<p>在Hello world中查找world:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo strpos(&quot;Hello world!&quot;,&quot;world&quot;);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将输出6，因为字符串中第一个字符的位置是0，而不是1.</p>
+<p>strpos()返回的不是第一匹配字符的下标，是按照字符数量来计算的。</p>
+<h2 id="PHP比较运算符："><a href="#PHP比较运算符：" class="headerlink" title="PHP比较运算符："></a>PHP比较运算符：</h2><p>==   等于</p>
+<p>===   绝对等于</p>
+<p>!=  不等于</p>
+<p>&lt;&gt;不等于</p>
+<p>!==绝对不等于</p>
+<p>PHP逻辑运算符</p>
+<p>and  与</p>
+<p>or 或</p>
+<p>xor 异或</p>
+<p>&amp;&amp; 与</p>
+<p>|| 或</p>
+<p>!  非</p>
+<h2 id="PHP数组运算符"><a href="#PHP数组运算符" class="headerlink" title="PHP数组运算符"></a>PHP数组运算符</h2><p>x+y (集合)  x和y的集合</p>
+<p>x==y（相等）如果x和y具有相同的键/值对，则返回true</p>
+<p>x===y（恒等）如果x和y具有相同的键/值对，且顺序相同类型相同，则返回true</p>
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>**”?:”**条件运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(expr1)?(expr2):(expr3)</span><br></pre></td></tr></table></figure>
+
+<p>对 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3。</p>
+<h2 id="组合比较符（太空船运算符）："><a href="#组合比较符（太空船运算符）：" class="headerlink" title="组合比较符（太空船运算符）："></a>组合比较符（太空船运算符）：</h2><p><strong>&lt;=&gt;</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$c&#x3D;$a&lt;&#x3D;&gt;$b;</span><br></pre></td></tr></table></figure>
+
+<p>若$a&gt;$b,则$c的值为1</p>
+<p>$a==$b，则$c的值为0</p>
+<p>$a&lt;$b，则$c的值为-1</p>
+<h2 id="运算符优先级："><a href="#运算符优先级：" class="headerlink" title="运算符优先级："></a>运算符优先级：</h2><p>口诀：括（号）、单（操作数）、算（术）、移（位）、关（系）；位（运算符）、逻（辑）、条（件）、赋（值）、逗（号）。</p>
+<p><strong>注：</strong>php中&amp;是引用的意思，如，c是a的引用（c和a是同一个变量）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$c&#x3D;&amp;$a;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="cklnxs2v3000774wbdh1ia59t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/10/php%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/28/PHP%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/29/%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/10/php%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

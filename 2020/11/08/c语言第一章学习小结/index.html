@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="c语言第一章学习小结一、基本数据类型：1、整型：（1）有符号数：短整型short int或short ​                                               整型int ​                                                长整型long int或long ​                    （2）无符号数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="c语言第一章学习小结一、基本数据类型：1、整型：（1）有符号数：短整型short int或short ​                                               整型int ​                                                长整型long int或long ​                    （2）无符号数">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-08T07:39:57.285Z">
+<meta property="article:modified_time" content="2020-11-08T07:39:30.024Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-c语言第一章学习小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time datetime="2020-11-08T07:39:57.285Z" itemprop="datePublished">2020-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="c语言第一章学习小结"><a href="#c语言第一章学习小结" class="headerlink" title="c语言第一章学习小结"></a>c语言第一章学习小结</h1><h3 id="一、基本数据类型："><a href="#一、基本数据类型：" class="headerlink" title="一、基本数据类型："></a>一、基本数据类型：</h3><p>1、整型：（1）有符号数：短整型short int或short</p>
+<p>​                                               整型int</p>
+<p>​                                                长整型long int或long</p>
+<p>​                    （2）无符号数</p>
+<p>2、浮点型：（1）单精度float：4个字节</p>
+<p>​                     （2）双精度double：8个字节</p>
+<p>​                     （3）长双精度：8个字节</p>
+<p>3、字符型：字符型数据（char）用来存储数据</p>
+<h3 id="二、变量："><a href="#二、变量：" class="headerlink" title="二、变量："></a>二、变量：</h3><p>​        变量是具有某种类型名的内存空间。（变量名、变量值、变量的存储空间）</p>
+<h5 id="格式：【存储类型】数据类型-变量名列表；"><a href="#格式：【存储类型】数据类型-变量名列表；" class="headerlink" title="格式：【存储类型】数据类型 变量名列表；"></a>格式：【存储类型】数据类型 变量名列表；</h5><p>对变量进行赋值：</p>
+<p>​      1、在定义的同时赋值，直接初始化变量：</p>
+<h5 id="格式：数据类型-变量名1-值1，…，变量名n-值n；"><a href="#格式：数据类型-变量名1-值1，…，变量名n-值n；" class="headerlink" title="格式：数据类型  变量名1=值1，…，变量名n=值n；"></a>格式：数据类型  变量名1=值1，…，变量名n=值n；</h5><p>​       2、在变量定义后用赋值操作来改变变量的值，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a,b,c;</span><br><span class="line">a&#x3D;2;b&#x3D;3;c&#x3D;4;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、常量："><a href="#三、常量：" class="headerlink" title="三、常量："></a>三、常量：</h3><p>1、整型常量：十进制（非0数字开头）</p>
+<p>​                        八进制（0数字开头）</p>
+<p>​                        十六进制（0x或0X开头）</p>
+<p>​       注：0123ul表示八进制数0123为无符号长整形整数。</p>
+<p>2、实型常量（也称为浮点数）：</p>
+<p>​     浮点数常量默认是double型，末尾加上f表示为float型，加l表示为long                                            double型。</p>
+<p>3、字符常量：</p>
+<p>​     字符常量是用单引号括起来的字符</p>
+<p>​      \n  回车换行</p>
+<p>​      \t  水平制表</p>
+<p>​      \b  退格</p>
+<p>​      \r  回车</p>
+<p>​      \f  换页</p>
+<p>4、字符串常量：</p>
+<p>​     注：</p>
+<p>​            字符常量与字符串常量的区别：</p>
+<p>​           （1）字符常量由单引号括起来，字符串常量由双引号括起来。</p>
+<p>​           （2）字符常量占一个字节的内存空间。字符串常量占的内存字节数等于字符串中字节数加1，增加的一个字节的内存空间存放字符“\0”（ASCII码为0）。该字符为字符串结束的标志。</p>
+<p>5、常变量：</p>
+<p>​     定义变量前加上关键字const，则变量的值在运行期间不能改变，称为常变量。</p>
+<p>​      <strong>格式：const数据类型  常变量名=初始值；</strong></p>
+<p>​      注：（1）常变量必须先说明并同时进行初始化再使用，且初始话后的常  变量不允许再被赋值。</p>
+<p>​              （2）常变量相对于常量最大的区别就是常变量需要分配存储空间。</p>
+<h3 id="四、C程序的输入与输出："><a href="#四、C程序的输入与输出：" class="headerlink" title="四、C程序的输入与输出："></a>四、C程序的输入与输出：</h3><p>​     1、格式输出函数：</p>
+<h5 id="语法格式：printf（格式控制序列，输出表列）；"><a href="#语法格式：printf（格式控制序列，输出表列）；" class="headerlink" title="语法格式：printf（格式控制序列，输出表列）；"></a>语法格式：printf（格式控制序列，输出表列）；</h5><p>​          注：格式输出序列由格式说明符和普通字符组成，其中，格式说明符由%加格式字符组成。</p>
+<p>​     2、格式输入函数：</p>
+<h5 id="语法格式：scanf（格式控制序列，地址表列）；"><a href="#语法格式：scanf（格式控制序列，地址表列）；" class="headerlink" title="语法格式：scanf（格式控制序列，地址表列）；"></a>语法格式：scanf（格式控制序列，地址表列）；</h5><p>​         注：数据输入时，多个输入数据之间要有间隔符。</p>
+<p>​                在用%c输入时，空格和转义字符均为有效字符。</p>
+<p>​                 输入时，遇三种情况认为该数据结束：（1）遇空格键、Tab键、或enter键。（2）有指定数据长度时，系统自动按长度截取。（3）遇非法输入。</p>
+<p>​    3、字符输入、输出函数：</p>
+<h5 id="语法格式：putchar-ch"><a href="#语法格式：putchar-ch" class="headerlink" title="语法格式：putchar(ch);"></a>语法格式：putchar(ch);</h5><p>putchar()函数的作用相当于printf(“%c”,ch)。</p>
+<h5 id="语法格式：getchar-ch"><a href="#语法格式：getchar-ch" class="headerlink" title="语法格式：getchar(ch);"></a>语法格式：getchar(ch);</h5><p>该函数等待输入直到按Enter键才结束，回车前所有的输入字符都会逐个出现在屏幕上，但只有第一个字符作为函数的返回值。</p>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">intmain()</span><br><span class="line">&#123;</span><br><span class="line"> char c;</span><br><span class="line"> c&#x3D;getchar();&#x2F;&#x2F;从键盘读入字符直到回车结束</span><br><span class="line"> putchar(c);&#x2F;&#x2F;显示输入的第一个字符</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 另：两个整数的运算结果只能是整数，当浮点数和整数放在一起运算时，C会将整数转化为浮点数，然后进行浮点数的运算。              </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/" data-id="cklnxs2v4000874wb0s8ugbjz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/07/%E8%A1%A5%E5%85%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/28/PHP%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/29/%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/10/php%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

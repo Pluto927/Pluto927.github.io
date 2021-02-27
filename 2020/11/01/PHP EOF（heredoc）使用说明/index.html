@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP EOF（heredoc）使用说明PHP EOF（heredoc）是一种在执行命令行shell（如sh,csh,ksh,bash,PowerShell和zsh）和程序语言（像Perl,PHP,Python,Ruby）里定义一个字符串的方法。 使用概述：1.必须后接分号，否则编译不通过。 2.EOF可以用任意其他字符代替，只需保证结束标识与开始标识一致。 3.结束表示必须顶格独自占一行（即：必">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/11/01/PHP%20EOF%EF%BC%88heredoc%EF%BC%89%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="PHP EOF（heredoc）使用说明PHP EOF（heredoc）是一种在执行命令行shell（如sh,csh,ksh,bash,PowerShell和zsh）和程序语言（像Perl,PHP,Python,Ruby）里定义一个字符串的方法。 使用概述：1.必须后接分号，否则编译不通过。 2.EOF可以用任意其他字符代替，只需保证结束标识与开始标识一致。 3.结束表示必须顶格独自占一行（即：必">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-01T08:40:05.713Z">
+<meta property="article:modified_time" content="2020-11-01T08:39:28.907Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-PHP EOF（heredoc）使用说明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/01/PHP%20EOF%EF%BC%88heredoc%EF%BC%89%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" class="article-date">
+  <time datetime="2020-11-01T08:40:05.713Z" itemprop="datePublished">2020-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PHP-EOF（heredoc）使用说明"><a href="#PHP-EOF（heredoc）使用说明" class="headerlink" title="PHP EOF（heredoc）使用说明"></a>PHP EOF（heredoc）使用说明</h1><p>PHP EOF（heredoc）是一种在执行命令行shell（如sh,csh,ksh,bash,PowerShell和zsh）和程序语言（像Perl,PHP,Python,Ruby）里定义一个字符串的方法。</p>
+<h3 id="使用概述："><a href="#使用概述：" class="headerlink" title="使用概述："></a>使用概述：</h3><p>1.必须后接分号，否则编译不通过。</p>
+<p>2.EOF可以用任意其他字符代替，只需保证结束标识与开始标识一致。</p>
+<p>3.结束表示必须顶格独自占一行（即：必须从首行开始，前后不能衔接任何空白和字符）。</p>
+<p>4.开始标识可以不带引号或带单双引号，不带引号与带双引号效果一致，可结束内嵌的变量和转义符号；带单引号则不解释内嵌的变量和转义符号。</p>
+<p>5.当内容需要内嵌引号（单引号或双引号）时，不需要加转义符，本身对单双引号转义，此处相当于q和qq的用法。</p>
+<p>实例：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">echo <span class="tag">&lt;&lt;&lt;<span class="attr">EOF</span></span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span>我的第一个标题<span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="code">        &lt;p&gt;我的第一个段落&lt;p&gt;</span></span><br><span class="line"><span class="code">EOF;</span></span><br><span class="line"><span class="code">//结束需要独立一行且前后不能空格</span></span><br><span class="line"><span class="code">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><p>1.以&lt;&lt;&lt;EOF开始标记开始，以EOF结束标记结束，结束标记必须顶头写，不能有缩进和空格，且在结束标记末尾要有分号。</p>
+<p>2.开始标记和结束标记相同，比如常用大写的EOT,EOD,EOF来表示，但是不只限于那几个（也可以用：JSON,HTML等），只要保证开始标记和结束标记不在正文中出现即可。</p>
+<p>3.位于开始标记和结束标记之间的变量可以被正常解析，但是函数则不可以。在heredoc中，变量不需要用连接符.或,来拼接，如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$name=&quot;runoob&quot;;</span></span><br><span class="line"><span class="xml">$a= <span class="tag">&lt;&lt;&lt;<span class="attr">EOF</span></span></span></span><br><span class="line"><span class="xml">       &quot;abc&quot;$name</span></span><br><span class="line"><span class="xml">       &quot;123&quot;</span></span><br><span class="line"><span class="xml">EOF;</span></span><br><span class="line"><span class="xml">//结束需要独立一行且前后不能空格</span></span><br><span class="line"><span class="xml">echo $a;</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="PHP-数据类型"><a href="#PHP-数据类型" class="headerlink" title="PHP 数据类型"></a>PHP 数据类型</h1><p>String(字符串)，lnteger(整型)，Float(浮点型)，Boolean(布尔型)，Array(数组)，Object(对象)，NULL(空值)。</p>
+<p>PHP字符串</p>
+<p>可以将任何文本放在单引号和双引号中：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$x=&quot;Hello worid!&quot;;</span></span><br><span class="line"><span class="xml">echo $x;</span></span><br><span class="line"><span class="xml">echo &quot;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span>&quot;;</span><br><span class="line">$x=&quot;Hello world!&quot;;</span><br><span class="line">echo $x;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP整型"><a href="#PHP整型" class="headerlink" title="PHP整型"></a>PHP整型</h2><h3 id="整数规则："><a href="#整数规则：" class="headerlink" title="整数规则："></a>整数规则：</h3><p>​       1.整数必须至少有一个数字。</p>
+<p>​        2.整数不能包含逗号或空格。</p>
+<p>​        3.整数是没有小数点的。</p>
+<p>​        4.整数可以是整数或负数。</p>
+<p>​        5.整型可以用三种格式来指定：十进制，十六进制（以0x为前缀）或八进制          （以0为前缀）。</p>
+<p>PHP var_dump()函数返回变量的数据类型和值：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$x=5985;</span></span><br><span class="line"><span class="xml">var_dump($X);</span></span><br><span class="line"><span class="xml">echo &quot;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span>&quot;;</span><br><span class="line">$x=-345;//负数</span><br><span class="line">var<span class="emphasis">_dump($x);</span></span><br><span class="line"><span class="emphasis">echo &quot;<span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span>&quot;;</span></span><br><span class="line"><span class="emphasis">$x=0x8c;//十六进制数</span></span><br><span class="line"><span class="emphasis">var_</span>dump($x);</span><br><span class="line">echo &quot;<span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span>&quot;;</span><br><span class="line">$x=047;//八进制数</span><br><span class="line">var<span class="emphasis">_dump($x);</span></span><br><span class="line"><span class="emphasis">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP浮点型"><a href="#PHP浮点型" class="headerlink" title="PHP浮点型"></a>PHP浮点型</h2><p>浮点数可以是小数形式也可以是指数形式。</p>
+<h2 id="PHP布尔型"><a href="#PHP布尔型" class="headerlink" title="PHP布尔型"></a>PHP布尔型</h2><p>布尔型可以是TURE或FALSE。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$x=ture;</span><br><span class="line">$y=false;</span><br></pre></td></tr></table></figure>
+
+<p>布尔型常用于条件判断。</p>
+<h2 id="PHP数组"><a href="#PHP数组" class="headerlink" title="PHP数组"></a>PHP数组</h2><p>数组可以在一个变量中存储多个值。</p>
+<p>创建一个数组，后使用PHP var_dump()函数返回数组的数据类型和值：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);</span></span><br><span class="line"><span class="xml">var_dump($cars);</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP对象"><a href="#PHP对象" class="headerlink" title="PHP对象"></a>PHP对象</h2><p>对象数据类型也可用于存储数据。</p>
+<p>在PHP中，对象必须声明。</p>
+<p>首先，必须使用Class关键字声明类对象。类，是可以包含属性和方法的结构。</p>
+<p>接着在类中定义数据类型，然后在实例化的类中使用数据类型。</p>
+<h2 id="PHP-MULL值"><a href="#PHP-MULL值" class="headerlink" title="PHP MULL值"></a>PHP MULL值</h2><p>MULL值表示变量没有值。MULL是数据类型为MULL的值。</p>
+<p>MULL值指明一个变量是否为空值。同样也可用于数据空值和MULL值的区别。可以通过设置变量值为MULL来清空变量数据：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">?php</span></span></span></span><br><span class="line"><span class="xml">$x=&quot;Hello world!&quot;;</span></span><br><span class="line"><span class="xml">$x=null;</span></span><br><span class="line"><span class="xml">var_dump($x);</span></span><br><span class="line"><span class="xml">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/01/PHP%20EOF%EF%BC%88heredoc%EF%BC%89%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" data-id="cklnxs2uo000074wb4zy11a5r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/07/%E8%A1%A5%E5%85%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/01/PHP%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%EF%BC%9Aecho%E5%92%8Cprint%E3%80%82/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/28/PHP%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/29/%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/10/php%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/09/PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83~%E8%BF%90%E7%AE%97%E7%AC%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/08/c%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
