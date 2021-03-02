@@ -142,8 +142,16 @@
 <p>流程控制：include 降低代码的重复量</p>
 <p>include(‘文件名’)抽离数据库公共代码到独立文件，include到主代码文件，并测试可用性</p>
 <h3 id="七、"><a href="#七、" class="headerlink" title="七、"></a>七、</h3><p><strong>循环</strong>：for(指定次数的循环）、foreach（遍历数组：根据键值对的数量决定循环多少次）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$arr&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">foreach($arr as $k&#x3D;&gt;$v)&#x2F;&#x2F;k是键v是值</span><br><span class="line">&#123;</span><br><span class="line">var-dump($k,$v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$arr&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">foreach($arr as $k&#x3D;&gt;$v)&#x2F;&#x2F;k是键,v是值</span><br><span class="line">&#123;</span><br><span class="line">var-dump($k,$v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p><strong>读取留言并循环显示：</strong></p>
+<p>1、连接数据库（include）</p>
+<p>2、编写SQL</p>
+<p>3、执行SQL</p>
+<p>4、取回执行结果（留言数据）</p>
+<p>5、在网页上循环输出留言（遍历foreach）</p>
+<h3 id="八、"><a href="#八、" class="headerlink" title="八、"></a>八、</h3><h5 id="封装SQL查询到函数："><a href="#封装SQL查询到函数：" class="headerlink" title="封装SQL查询到函数："></a>封装SQL查询到函数：</h5><p>1、数据写入</p>
+<p>2、数据读取</p>
 
       
     </div>
