@@ -94,18 +94,56 @@
 <p>1、必须为表单添加name属性</p>
 <p>2、表单必须被form标签包含——form表单…form</p>
 <p>3、form标签必须包含：(1)、action=“接受网址”</p>
-<p>​                                                      (2)、method=’POST’(发送类型/GET)</p>
+<p>​                                          (2)、method=’POST’(发送类型/GET)</p>
 <p>​             </p>
 <h5 id="接收留言："><a href="#接收留言：" class="headerlink" title="接收留言："></a>接收留言：</h5><p>代码位置：save.php</p>
 <p>PHP如何接受数据：1、$_GET[‘name’]   2、$_POST[‘name’]</p>
 <p>调试技巧——var_dump($_POST/GET)检验数据是否发送成功</p>
 <h3 id="五、"><a href="#五、" class="headerlink" title="五、"></a>五、</h3><h5 id="数据库：mysql——服务端-php——客户端"><a href="#数据库：mysql——服务端-php——客户端" class="headerlink" title="数据库：mysql——服务端   php——客户端"></a>数据库：mysql——服务端   php——客户端</h5><h5 id="创建数据库："><a href="#创建数据库：" class="headerlink" title="创建数据库："></a>创建数据库：</h5><p>库：每个项目使用一个库；字符集（utf8mb4）</p>
 <p>表</p>
-<p>列：货币——decimal   时间——datetime/int每个表都建议有个id列(int类型；自增；主键)</p>
+<p>列：货币——decimal   时间——datetime/int每个表都建议有个id列(int类型；自增；主键（小钥匙)）</p>
 <h5 id="sql常用语句（where条件）："><a href="#sql常用语句（where条件）：" class="headerlink" title="sql常用语句（where条件）："></a>sql常用语句（where条件）：</h5><p>1、增–insert into 表名(列名) values(‘插入内容’)</p>
 <p>2、删–delete from 表名 <u>where id=1</u>（表示从…之中）</p>
 <p>3、改–update 表名 set 列1=’修改后的内容’ ，列2=‘修改后的内容’ where id=2</p>
-<p>4、查–select * from 表名 where id=2 <u>order by id desc</u>(倒序排序)/order by id desc                                               limit 3(只要查看前三条)</p>
+<p>4、查–select * from 表名 where id=2 <u>order by id desc</u>(倒序排序)/order by id desc limit 3(只要查看前三条)</p>
+<h5 id="php操作MySQL数据库："><a href="#php操作MySQL数据库：" class="headerlink" title="php操作MySQL数据库："></a>php操作MySQL数据库：</h5><p>1、<strong>链接到数据库</strong>——PDO</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$dsn&#x3D;&#39;mysql:dbname&#x3D;数据库名称;host&#x3D;主机地址&#39;;</span><br><span class="line">$pdo&#x3D;new PDO($dsn,&#39;数据库账户名&#39;,&#39;密码&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>2、<strong>写数据</strong>：（1）编写SQL（PDO类）</p>
+<p>​        PDO::prepare——准备要执行的语句，并返回语句对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sql&#x3D;&quot;INSRET INTO&#39;test&#39;(&#39;username&#39;,&#39;content&#39;)VALUES(&#39;123&#39;,&#39;用户名&#39;)&quot;;</span><br><span class="line">$sth&#x3D;$pdo-&gt;prepare($sql);</span><br></pre></td></tr></table></figure>
+
+<p>​                     （2）执行SQL（PDOStatement类）</p>
+<p>​       PDOStatement::execute——执行一条预处理语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sth-&gt;execute();</span><br></pre></td></tr></table></figure>
+
+<p>3、<strong>读数据</strong>：（1）编写SQL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sql&#x3D;&quot;select*from test&quot;;&#x2F;&#x2F;读取表中数据;</span><br><span class="line">$sth&#x3D;$pdo-&gt;prepare($sql);</span><br></pre></td></tr></table></figure>
+
+<p>​                      （2）执行SQL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sth&#x3D;execute();</span><br></pre></td></tr></table></figure>
+
+<p>​                      （3）从执行结果中取出数据（数组）(PDOStatement::fetchAll——返回上一个包含结果集中所有行的数组)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$date&#x3D;$sth-&gt;fetchAll();</span><br></pre></td></tr></table></figure>
+
+<h5 id="保存留言到数据库："><a href="#保存留言到数据库：" class="headerlink" title="保存留言到数据库："></a>保存留言到数据库：</h5><p>1、创建数据库</p>
+<p>2、连接到数据库、编写、执行、跳转回留言页面——header(‘location:index.php’;)</p>
+<h3 id="六、"><a href="#六、" class="headerlink" title="六、"></a>六、</h3><p><strong><em>运算符</em></strong>：**求幂   &lt;&gt;不等于   ==等于（只考虑值）===等于（既考虑值又考虑数据类型）. 拼接  &amp;&amp;and   ||or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$a+1;&#x2F;&#x2F;将$a+1的结果赋值给$a</span><br><span class="line">$a.&#x3D;1;&#x2F;&#x2F;将1追加到$a的末尾（以字符串的形式）</span><br></pre></td></tr></table></figure>
+
+<p><strong>if判断</strong>：数字转化为布尔值时，非零数字为ture,零为false</p>
+<p><strong>数据校验</strong>：写于数据接收之后，进入数据库之前</p>
+<p>1、如果用户名或留言内容为空</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(trim($content)&#x3D;&#x3D;&#39;&#39;ortrim($username&#x3D;&#x3D;&#39;&#39;))&#123;</span><br><span class="line">echo&#39;用户名、留言内容不能为空&#39;;</span><br><span class="line">exit;&#x2F;&#x2F;停止</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>trim清除对象头尾的空白字符</p>
+<p>2、如果用户名为admin/root/领导人</p>
+<p><strong>将代码写在不同的文件</strong>：</p>
+<p>流程控制：include 降低代码的重复量</p>
+<p>include(‘文件名’)抽离数据库公共代码到独立文件，include到主代码文件，并测试可用性</p>
+<h3 id="七、"><a href="#七、" class="headerlink" title="七、"></a>七、</h3><p><strong>循环</strong>：for(指定次数的循环）、foreach（遍历数组：根据键值对的数量决定循环多少次）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$arr&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">foreach($arr as $k&#x3D;&gt;$v)&#x2F;&#x2F;k是键v是值</span><br><span class="line">&#123;</span><br><span class="line">var-dump($k,$v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
